@@ -1,0 +1,105 @@
+{% extends "food/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Detail</title>
+</head>
+<body>
+    
+    {% block body %}
+    <div class="container mt-5 pt-5">  <!-- Increased top spacing -->
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <!-- Main Card -->
+                <div class="card shadow-lg border-0" style="border-radius: 20px;">
+                    <div class="card-body p-5">
+                        <div class="row align-items-stretch">
+                            <!-- Image Column - Blue Gradient -->
+                            <div class="col-md-6">
+                                <div class="h-100 d-flex flex-column justify-content-center p-4 rounded-lg" 
+                                     style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                                    <div class="text-center">
+                                        <img height="280" src="{{item.item_image}}" 
+                                             class="img-fluid rounded-lg shadow" 
+                                             alt="{{object.item_name}}"
+                                             style="border: 8px solid rgba(255,255,255,0.3); 
+                                                    box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Info Column - Grey Gradient -->
+                            <div class="col-md-6">
+                                <div class="h-100 d-flex flex-column justify-content-between p-4 rounded-lg"
+                                     style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                                    
+                                    <!-- Food Name -->
+                                    <div class="mb-4">
+                                        <h1 class="text-dark mb-2" style="color: #2c3e50 !important;">
+                                            🍽️ {{object.item_name}}
+                                        </h1>
+                                        <div class="border-bottom pb-3" style="border-color: #3498db !important;"></div>
+                                    </div>
+                                    
+                                    <!-- Description -->
+                                    <div class="mb-4">
+                                        <h5 class="text-muted mb-3">
+                                            📝 <span style="color: #7f8c8d;">Description</span>
+                                        </h5>
+                                        <div class="bg-white p-3 rounded shadow-sm">
+                                            <p class="mb-0" style="color: #34495e;">{{object.item_desc}}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Calories -->
+                                    <div class="mb-4">
+                                        <h4 class="mb-0">
+                                            🔥 <span class="text-primary" style="color: #3498db !important;">
+                                                {{object.item_cal}} Calories
+                                            </span>
+                                        </h4>
+                                        <small class="text-muted">Energy value per serving</small>
+                                    </div>
+                                    
+                                    <!-- Delete Button - COOL RED -->
+                                    <div class="mt-4 pt-3 border-top" style="border-color: #ddd !important;">
+                                        <a href="{%url 'food:delete_item' item.id%}" 
+                                           class="btn btn-lg w-100 shadow"
+                                           style="background: linear-gradient(135deg, #e74c3c, #c0392b);
+                                                  color: white;
+                                                  border: none;
+                                                  border-radius: 10px;
+                                                  font-weight: 600;
+                                                  padding: 12px;
+                                                  transition: all 0.3s ease;"
+                                           onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 20px rgba(231, 76, 60, 0.3)';"
+                                           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.1)';"
+                                           onclick="return confirm('⚠️ Delete {{object.item_name}} permanently?');">
+                                            🗑️ DELETE ITEM
+                                        </a>
+                                        <small class="text-muted d-block text-center mt-2">
+                                            <i class="fas fa-exclamation-triangle text-danger mr-1"></i>
+                                            This action cannot be undone
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Back Button -->
+                <div class="text-center mt-4">
+                    <a href="{% url 'food:index' %}" 
+                       class="btn btn-outline-primary btn-lg px-4"
+                       style="border-color: #3498db; color: #3498db;">
+                        ← Back to Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock%}
+</body>
+</html>

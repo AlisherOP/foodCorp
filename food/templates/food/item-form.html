@@ -1,0 +1,36 @@
+{% extends "food/base.html" %}
+
+{%block body%}
+<div class="container">
+    <div class="raw">
+        <div class="col-md-5 offset-md-4 mt-5"><!--offset move left right--><!--mt for up and down-->
+            <div class="card"> <!--to desplay the login, has to parts -->
+                <!-- the header and the  body-->
+                <div class="card-header bg-info">
+                    <div class="card-title"> <!-- title for the card-->
+                        Add-Item
+                    </div>
+                </div>
+                <!-- THe body part -->
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %} 
+                        <div class="form-group">
+                            {% for field in form %}
+                                <div class="mb-3">
+                                    {{ field.label_tag }}
+                                    {{ field }}
+                                </div>
+                            {% endfor %}
+                        </div> 
+                        <button class="btn-info" type="submit">Save</button>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{%endblock%}

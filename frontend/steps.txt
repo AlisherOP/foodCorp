@@ -1,0 +1,18 @@
+main work in App and Main } 
+1. api.js;connect the api's for the front to understand: for authorization token
+2. src/components/ProtectedRoute.jsx
+3. Protecting routs on front and back
+import libraries(in ProtectedRoute.jsx)
+    create token itdentificatore, authorizor also token refresher
+        inside refresher;
+            try sending respons to this route with the refresh token: to give access token
+                if 200(successfull-you got the access token)=chanaging the access token to res.data.success
+
+add some changes "App.jsx" to make sure the pages are displayed from src/pages
+
+create Form.jsx for saving the the new accounts and their data
+create  Form.css in the styles.
+    change the .env url to your django url
+    run the terminal-(both django and react)
+
+

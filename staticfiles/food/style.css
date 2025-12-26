@@ -1,0 +1,8 @@
+body.test-css {
+    background-color: red !important;
+}
+
+body {
+    background-color: blue;
+}
+
