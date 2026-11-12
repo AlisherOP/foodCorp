@@ -2,7 +2,7 @@
 
 FoodCorp is a full-stack web application designed to help users manage their personalized food collections and keep track of their favorite foods. It features a robust Django REST API backend coupled with a modern, fast React frontend built with Vite.
 
-## 🚀 Features
+## Features
 
 - **User Authentication**: Secure login and registration using JWT (JSON Web Tokens).
 - **Protected Routes**: Frontend routing secured based on authentication state.
@@ -10,7 +10,7 @@ FoodCorp is a full-stack web application designed to help users manage their per
 - **Favorites Management**: Easily add, view, and manage your favorite foods list.
 - **Admin Dashboard**: Built-in Django admin interface for easy data management.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - **Framework**: React 19
@@ -26,14 +26,14 @@ FoodCorp is a full-stack web application designed to help users manage their per
 - **Database**: PostgreSQL / SQLite (via psycopg2-binary)
 - **Server**: Gunicorn (for deployment)
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 - **Node.js** (v18 or higher) and **npm**
 - **Python** (v3.8 or higher)
 - **pip** (Python package manager)
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 ### 1. Clone the repository
 ```bash
@@ -82,7 +82,7 @@ echo "VITE_API_URL=http://127.0.0.1:8000" > .env
 npm run dev
 ```
 
-## 🗺️ Application Routes
+## Application Routes
 
 **Frontend:**
 - `/` - Home
@@ -98,13 +98,13 @@ npm run dev
 - `/profile/favourites/` - User's Favorites List
 - `/fav/<id>/` - Add/Remove specific favorite
 
-## 🚀 Deployment
+## Deployment
 
 This project includes a `Procfile` pre-configured to run the WSGI application with Gunicorn, making it ready for deployment to platforms like Heroku, Render, or any standard Linux server.
 
 Remember to update your CORS settings and `ALLOWED_HOSTS` in Django's `settings.py` before deploying to production.
 
-## 🤝 Contributing
+## Contributing
 Contributions, issues, and feature requests are welcome!
 
 ---
